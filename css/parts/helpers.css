@@ -1,0 +1,26 @@
+.flex {
+    display: flex;
+}
+
+.flex.justify-center {
+    justify-content: center;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+.flex.justify-space-between {
+    justify-content: space-between;
+}
+
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.clean-link {
+    text-decoration: none;
+    color: inherit;
+}

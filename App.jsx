@@ -3,7 +3,7 @@ import { AppFooter } from './js/cmps/AppFooter.jsx'
 import { Home } from './js/pages/Home.jsx'
 import { About } from './js/pages/About.jsx'
 import { MailApp } from './js/apps/mail/pages/MailIndex.jsx'
-import { NoteApp } from './js/apps/note/pages/NoteIndex.jsx'
+import { NoteIndex } from './js/apps/note/pages/NoteIndex.jsx'
 // import { BookApp } from './js/apps/note/pages/NoteIndex'
 
 
@@ -28,7 +28,7 @@ export function App() {
             {/* <Route component={CarEdit} path="/car/edit/:carId?" />
             <Route component={CarDetails} path="/car/:carId" /> */}
             <Route component={MailApp} path="/mail" />
-            <Route component={NoteApp} path="/note" />
+            <Route component={NoteIndex} path="/note" />
             {/* <Route component={BookApp} path="/book" /> */}
             <Route component={About} path="/about" />
             <Route component={Home} path="/" />
@@ -43,4 +43,3 @@ export function App() {
 
 
 
-{/* <CarApp /> */ }
