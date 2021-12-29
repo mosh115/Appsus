@@ -9,7 +9,7 @@ import { NoteApp } from './js/apps/note/pages/NoteIndex.jsx'
 
 // import { CarDetails } from './pages/CarDetails.jsx'
 // import { CarEdit } from './pages/CarEdit.jsx'
-// import { UserMsg } from './cmps/UserMsg.jsx'
+import { UserMsg } from './js/cmps/user-msg.jsx'
 
 
 const Router = ReactRouterDOM.HashRouter
@@ -36,7 +36,7 @@ export function App() {
         </main>
       </section>
       <AppFooter />
-      {/* <UserMsg /> */}
+      <UserMsg />
     </Router>
   );
 }
