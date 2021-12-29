@@ -91,30 +91,42 @@ function _createNotes() {
                     txt: utilService.makeLorem(16)
                 }
             },
-            // {
-            //     id: utilService.makeId(),
-            //     type: "note-img",
-            //     isPinned: false,
-            //     info: {
-            //         url: "http://some-img/me",
-            //         title: "Bobi and Me"
-            //     },
-            //     style: {
-            //         backgroundColor: "#00d"
-            //     }
-            // },
-            // {
-            //     id: utilService.makeId(),
-            //     type: "note-todos",
-            //     isPinned: true,
-            //     info: {
-            //         label: "Get my stuff together",
-            //         todos: [
-            //             { txt: "Driving liscence", doneAt: null },
-            //             { txt: "Coding power", doneAt: 187111111 }
-            //         ]
-            //     }
-            // }
+            {
+                id: utilService.makeId(),
+                type: "note-img",
+                isPinned: false,
+                title: "Bobi and Me",
+                info: {
+                    url: "https://robohash.org/dscdsv",
+                },
+                style: {
+                    backgroundColor: "#00d"
+                }
+            },
+            {
+                id: utilService.makeId(),
+                type: "note-video",
+                isPinned: false,
+                title: "My new playlist",
+                info: {
+                    url: "https://www.youtube.com/embed/tgbNymZ7vqY",
+                },
+                style: {
+                    backgroundColor: "#00d"
+                }
+            },
+            {
+                id: utilService.makeId(),
+                type: "note-todos",
+                isPinned: true,
+                title: "Get my stuff together",
+                info: {
+                    todos: [
+                        { txt: "Driving liscence", isDone: true },
+                        { txt: "Coding power", isDone: false }
+                    ]
+                }
+            }
         ];
     }
     _saveNotesToStorage(notes);

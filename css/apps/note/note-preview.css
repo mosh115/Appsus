@@ -28,3 +28,7 @@
     line-height: 1.5rem;
 
 }
+
+.note-preview .note-text .todo-done {
+    text-decoration: line-through;
+}
