@@ -1,0 +1,11 @@
+.mail-app {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 100px 1fr;
+    margin: 20px;
+}
+.mail-list {
+    background-color: beige;
+    grid-area: 2/2/2/3;
+}
+

@@ -2,7 +2,7 @@ import { AppHeader } from './js/cmps/AppHeader.jsx'
 import { AppFooter } from './js/cmps/AppFooter.jsx'
 import { Home } from './js/pages/Home.jsx'
 import { About } from './js/pages/About.jsx'
-import { MailApp } from './js/apps/mail/pages/MailIndex.jsx'
+import { MailApp } from './js/apps/mail/pages/MailApp.jsx'
 import { NoteIndex } from './js/apps/note/pages/NoteIndex.jsx'
 // import { BookApp } from './js/apps/note/pages/NoteIndex'
 

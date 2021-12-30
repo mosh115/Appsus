@@ -32,7 +32,7 @@ export class NoteIndex extends React.Component {
     loadnotes = () => {
         const { filterBy } = this.state
         noteService.query(filterBy).then(notes => {
-            this.setState({ notes }, console.log('notes in Note index', notes))
+            this.setState({ notes })
         })
 
     }
