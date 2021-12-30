@@ -7,7 +7,7 @@ import { NoteIndex } from './js/apps/note/pages/NoteIndex.jsx'
 // import { BookApp } from './js/apps/note/pages/NoteIndex'
 
 
-// import { CarDetails } from './pages/CarDetails.jsx'
+import { NoteDetails } from './js/apps/note/pages/NoteDetails.jsx'
 // import { CarEdit } from './pages/CarEdit.jsx'
 import { UserMsg } from './js/cmps/user-msg.jsx'
 
@@ -25,8 +25,8 @@ export function App() {
         <AppHeader />
         <main>
           <Switch>
-            {/* <Route component={CarEdit} path="/car/edit/:carId?" />
-            <Route component={CarDetails} path="/car/:carId" /> */}
+            {/* <Route component={CarEdit} path="/car/edit/:carId?" /> */}
+            <Route component={NoteDetails} path="/note/:noteId" />
             <Route component={MailApp} path="/mail" />
             <Route component={NoteIndex} path="/note" />
             {/* <Route component={BookApp} path="/book" /> */}

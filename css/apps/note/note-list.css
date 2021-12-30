@@ -2,8 +2,8 @@
     columns: 250px 5;
     margin: 0 auto;
     width: 90%;
-    height: 100vh;
+    /* height: 100vh; */
     overflow-y: auto;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     padding: 4px 16px 12px 16px;
 }
