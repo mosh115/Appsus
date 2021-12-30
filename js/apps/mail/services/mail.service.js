@@ -23,7 +23,7 @@ function query(criteria) {
 }
 
 function _getFilteredMalis(mails, criteria) {
-    console.log('from filter',criteria);
+    // console.log('from filter',criteria);
     let { folder, isRead, showAll, txt } = criteria
     let filteredMails = mails;
     txt = txt.toLowerCase();

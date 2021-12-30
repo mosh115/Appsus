@@ -1,11 +1,25 @@
 .mail-app {
     display: grid;
     grid-template-columns: 200px 1fr;
-    grid-template-rows: 100px 1fr;
+    grid-template-rows: 70px 1fr;
     margin: 20px;
 }
 .mail-list {
-    background-color: beige;
+    min-height: 60vh;
+    background-color: #e9e9e9;
+    grid-area: 2/2/2/3;
+}
+.folder-container {
+    grid-area: 2/1/2/2;
+}
+.searc-input {
+    grid-area: 1/2/1/3;
+    justify-self: center;
+    align-self: center;
+}
+.mail-details {
+    min-height: 60vh;
+    background-color: rgb(255, 255, 255);
     grid-area: 2/2/2/3;
 }
 

@@ -1,4 +1,5 @@
 
+const { Link } = ReactRouterDOM;
 
 export function MailPreview({ mail }) {
     let isRead = mail.isRead ? 'read' : 'unread';
@@ -23,12 +24,14 @@ export function MailPreview({ mail }) {
         let dateArr = date.split('.');
         timeToShow = `${dateArr[0]}.${dateArr[1]}`
     } else timeToShow = mailTime.toLocaleDateString();
-    
+
     return (
-        <section className={`mail-preview ${isRead} flex justify-space-between`} >
-            <p className="name">{name}</p>
-            <p className="subject"> {mail.subject.slice(0, 25)}</p>
-            <p className="mail-time">{timeToShow}</p>
-        </section>
+        <Link to={`/mail/${mail.id}`} className="clean-link">
+            <section className={`mail-preview ${isRead} flex justify-space-between`} >
+                <p className="name">{name}</p>
+                <p className="subject"> {mail.subject.slice(0, 25)}</p>
+                <p className="mail-time">{timeToShow}</p>
+            </section>
+        </Link>
     )
 }

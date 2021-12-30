@@ -1,41 +1,26 @@
 import { MailList } from '../cmps/MailList.jsx'
-import { MailFilter } from '../cmps/MailFilter.jsx'
 import { MailFolders } from '../cmps/MailFolders.jsx'
+import { MailDetails } from '../pages/MailDetails.jsx'
 
 import { mailService } from '../services/mail.service.js'
 
 const Router = ReactRouterDOM.HashRouter
-const { Route, Switch } = ReactRouterDOM
+const { Route, Switch, Redirect } = ReactRouterDOM
 
 
 
-export class MailApp extends React.Component {
-    state = {
-        mails: null,
-    }
-
-    componentDidMount() {
-        this.loadMails()
-    }
-    defualtCriteria = {
-        folder: 'inbox',
-        txt: '',
-        showAll: true, //raed and unread
-        isRead: false, 
-    }
-
-    loadMails = (criteria = this.defualtCriteria) => {
-        mailService.query(criteria)
-            .then((mails) => this.setState({ mails }))
-    }
-
+export class MailApp extends React.Component {          //kcould be functoin
+   
     render() {
-        let { mails } = this.state;
-        if (!mails) return <h1>Loading...</h1>
+    
         return (
             <section className="mail-app" >
-                <MailList mails={mails} />
-                <MailFolders reload={this.loadMails}/>
+                <Switch>
+                    <Route component={MailList} path="/mail/list" />
+                    <Route component={MailDetails} path="/mail/:mailId" />
+                    <Redirect from="/mail" to="/mail/list" />
+                </Switch>
+                <MailFolders reload={this.loadMails} />
             </section>
         )
     }
