@@ -1,0 +1,21 @@
+.note-edit {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.note-edit .modal {
+    width: 100%;
+    height: fit-content;
+    max-width: 300px;
+    background-color: #a4d1c8;
+    position: absolute;
+    border: 5px;
+    box-shadow: 2px 4px 20px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    padding: 20px;
+}

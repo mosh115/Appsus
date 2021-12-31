@@ -50,8 +50,12 @@ export class NoteEdit extends React.Component {
         // const { id } = this.state.note
         return (
             <section className="note-edit">
+                <div className="modal">
 
-                <h1>note</h1>
+                    <h1 >note</h1>
+
+                </div>
+
                 {/* <h1>{id ? 'Edit' : 'Add'} note</h1> */}
                 {/* <form onSubmit={this.onSavenote} >
                     <label htmlFor="by-vendor">Vendor:</label>

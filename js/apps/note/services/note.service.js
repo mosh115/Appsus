@@ -6,6 +6,7 @@ export const noteService = {
     removeNote,
     saveNote,
     getnoteById,
+    copyNote
 }
 
 
@@ -24,108 +25,73 @@ function _createNotes() {
                 type: 'note-txt',
                 isPinned: true,
                 title: 'Test note',
-                info: {
-                    txt: 'Fullstack Me Baby!'
-                }
+                txt: 'Fullstack Me Baby!',
+                style: '#F9D371'
             },
             {
                 id: utilService.makeId(),
                 type: 'note-txt',
                 isPinned: false,
                 title: 'Things to Master',
-                info: {
-                    txt: 'Learn NodeJs!'
-                }
+                txt: 'Learn NodeJs!'
+
             },
             {
                 id: utilService.makeId(),
                 type: 'note-txt',
                 isPinned: false,
                 title: utilService.makeLorem(5),
-                info: {
-                    txt: utilService.makeLorem(30)
-                }
+                txt: utilService.makeLorem(30)
+
             },
             {
                 id: utilService.makeId(),
                 type: 'note-txt',
                 isPinned: false,
                 title: utilService.makeLorem(5),
-                info: {
-                    txt: utilService.makeLorem(16)
-                }
+                txt: utilService.makeLorem(16)
+
             },
             {
                 id: utilService.makeId(),
                 type: 'note-txt',
                 isPinned: true,
                 title: 'Test note',
-                info: {
-                    txt: 'Fullstack Me Baby!'
-                }
-            },
-            {
-                id: utilService.makeId(),
-                type: 'note-txt',
-                isPinned: false,
-                title: 'Things to Master',
-                info: {
-                    txt: 'Learn NodeJs!'
-                }
+                txt: 'Fullstack Me Baby!'
             },
             {
                 id: utilService.makeId(),
                 type: 'note-txt',
                 isPinned: false,
                 title: utilService.makeLorem(5),
-                info: {
-                    txt: utilService.makeLorem(30)
-                }
-            },
-            {
-                id: utilService.makeId(),
-                type: 'note-txt',
-                isPinned: false,
-                title: utilService.makeLorem(5),
-                info: {
-                    txt: utilService.makeLorem(16)
-                }
+                txt: utilService.makeLorem(16)
             },
             {
                 id: utilService.makeId(),
                 type: "note-img",
                 isPinned: false,
                 title: "Bobi and Me",
-                info: {
-                    url: "https://robohash.org/dscdsv",
-                },
-                style: {
-                    backgroundColor: "#00d"
-                }
+                url: "https://robohash.org/dscdsv",
+                style: '#F47340'
             },
             {
                 id: utilService.makeId(),
                 type: 'note-video',
                 isPinned: false,
                 title: 'My new playlist',
-                info: {
-                    url: 'https://www.youtube.com/embed/tgbNymZ7vqY',
-                },
-                style: {
-                    backgroundColor: '#00d'
-                }
+                url: 'https://www.youtube.com/embed/tgbNymZ7vqY',
+                style: '#8843F2'
             },
             {
                 id: utilService.makeId(),
                 type: "note-todos",
                 isPinned: true,
                 title: "Get my stuff together",
-                info: {
-                    todos: [
-                        { txt: "Driving liscence", isDone: true },
-                        { txt: "Coding power", isDone: false }
-                    ]
-                }
+                todos: [
+                    { txt: "Driving liscence", isDone: true },
+                    { txt: "Coding power", isDone: false }
+                ]
+
             }
         ];
     }
@@ -155,6 +121,17 @@ function removeNote(noteId) {
     notes = notes.filter(note => note.id !== noteId)
     _saveNotesToStorage(notes);
     return Promise.resolve()
+}
+
+function copyNote(noteId) {
+    let notes = _loadNotesFromStorage()
+    let noteIdx = notes.findIndex((note) => note.id === noteId);
+    let notesCopy = JSON.parse(JSON.stringify(notes));
+    let noteCopy = notesCopy.copyWithin(0, noteIdx, noteIdx + 1).shift();
+    noteCopy.id = utilService.makeId();
+    notes.push(noteCopy);
+    _saveNotesToStorage(notes);
+    return Promise.resolve();
 }
 
 function getnoteById(noteId) {
@@ -189,6 +166,11 @@ function _addNote(noteToSave) {
 }
 
 function _updateNote(noteToSave) {
+    // if (noteToSave.type === 'note-video') {
+    //     const videoId = noteToSave.url.replace('https://www.youtube.com/watch?v=', '')
+    //     const url = `https://www.youtube.com/embed/${videoId}`
+    //     noteToSave.url = url
+    // }
     const notes = _loadNotesFromStorage()
     let noteIdx = notes.findIndex(function (note) {
         return note.id === noteToSave.id;

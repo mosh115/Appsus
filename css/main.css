@@ -7,14 +7,16 @@
 @import './apps/note/note-index.css';
 @import './apps/note/note-list.css';
 @import './apps/note/note-preview.css';
+@import './apps/note/note-todos.css';
 
 @import './apps/note/mail/layout.css';
 @import './apps/note/mail/preview.css';
 
 
-*{
+* {
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
 }
