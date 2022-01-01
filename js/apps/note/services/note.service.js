@@ -24,53 +24,58 @@ function _createNotes() {
                 id: utilService.makeId(),
                 type: 'note-txt',
                 isPinned: true,
-                title: 'Test note',
+                title: 'I am the first note!',
                 txt: 'Fullstack Me Baby!',
                 style: '#F9D371'
             },
             {
                 id: utilService.makeId(),
-                type: 'note-txt',
+                type: 'note-video',
                 isPinned: false,
-                title: 'Things to Master',
-                txt: 'Learn NodeJs!'
+                title: 'Mix 2022 new year',
+                url: 'https://www.youtube.com/embed/3FKtI2OaymM',
+                style: '#73A3F2'
+            },
 
-            },
-            {
-                id: utilService.makeId(),
-                type: 'note-txt',
-                isPinned: false,
-                title: utilService.makeLorem(5),
-                txt: utilService.makeLorem(30)
-
-            },
-            {
-                id: utilService.makeId(),
-                type: 'note-txt',
-                isPinned: false,
-                title: utilService.makeLorem(5),
-                txt: utilService.makeLorem(16)
-
-            },
-            {
-                id: utilService.makeId(),
-                type: 'note-txt',
-                isPinned: true,
-                title: 'Test note',
-                txt: 'Fullstack Me Baby!'
-            },
-            {
-                id: utilService.makeId(),
-                type: 'note-txt',
-                isPinned: false,
-                title: utilService.makeLorem(5),
-                txt: utilService.makeLorem(16)
-            },
             {
                 id: utilService.makeId(),
                 type: "note-img",
                 isPinned: false,
-                title: "Bobi and Me",
+                title: "Happy new year!",
+                url: "https://srcwap.com/wp-content/uploads/2019/06/happy-new-year-2022-HD-gif-download-1.gif",
+                style: '#d47740'
+            },
+            {
+                id: utilService.makeId(),
+                type: 'note-txt',
+                isPinned: false,
+                title: 'programmers jokes',
+                txt: 'The trouble with programmers is that you can never tell what a programmer is doing until its too late'
+
+            },
+            {
+                id: utilService.makeId(),
+                type: "note-todos",
+                isPinned: true,
+                title: "Things to Master",
+                style: '#C7D9B7',
+                todos: [
+                    { txt: "Learn HTML", isDone: true },
+                    { txt: "Learn CSS", isDone: true },
+                    { txt: "Learn JS", isDone: true },
+                    { txt: "Learn React", isDone: true },
+                    { txt: "Learn NodeJS", isDone: false },
+                    { txt: "Learn Veu", isDone: false },
+                    { txt: "Learn Angular", isDone: false },
+                ]
+
+            },
+
+            {
+                id: utilService.makeId(),
+                type: "note-img",
+                isPinned: false,
+                title: "Robi the king",
                 url: "https://robohash.org/dscdsv",
                 style: '#F47340'
             },
