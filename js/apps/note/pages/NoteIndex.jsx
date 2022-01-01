@@ -116,7 +116,7 @@ export class NoteIndex extends React.Component {
 
         return (
             <section className="note-index">
-                <NoteFilter onSetFilter={this.onSetFilter} />
+                {/* <NoteFilter onSetFilter={this.onSetFilter} /> */}
                 <div className='add-note'>
                     <input ref={this.inputRef} name={noteType} placeholder={placeHolder} onKeyDown={this.handleInputSumbit} />
                     <div className='btn-actions'>

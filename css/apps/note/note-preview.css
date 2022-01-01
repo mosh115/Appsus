@@ -83,3 +83,7 @@
     width: 20px;
     height: 20px;
 }
+
+.note-preview input, textarea:focus {
+    outline: none;
+}

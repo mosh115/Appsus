@@ -1,8 +1,18 @@
 .note-text .btn-remove-todo {
     border: none;
+    cursor: pointer;
+    border-radius: 2em;
+
+
+}
+
+.note-text .btn-remove-todo:hover {
+    background-color: lightgray;
+
 }
 
 .note-text .btn-remove-todo .img-remove-todo {
+    background-color: inherit;
     width: 18px;
 
 }
