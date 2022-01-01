@@ -42,8 +42,8 @@ export class NewMail extends React.Component {
                 <input type="text" placeholder="subject:" name="subject" onChange={this.handleChange} value={subject} />
                 <textarea name="body" id="" cols="70" rows="10" onChange={this.handleChange} value={body}></textarea>
                 <footer className="footer flex justify-space-between">
-                    <button onClick={() => this.onNewMail(false)}>send</button>
-                    <button onClick={() => this.onNewMail(true)}>save</button>
+                    <button className="send" onClick={() => this.onNewMail(false)}>send</button>
+                    <button className="save" onClick={() => this.onNewMail(true)}>save</button>
                 </footer>
             </section>
         )

@@ -1,0 +1,26 @@
+.home {
+    height: 80vh;
+    color: rgb(247, 244, 244);
+    text-align: center;
+    background-image: url(../../img/home.jpg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    font-family: Roboto;
+    background-size: cover;
+    font-family: pushster;
+    /* width: 100%; */
+    /* height: 100%; */
+}
+
+.home h2 {
+    font-family: pushster;
+    font-size: 40px;
+    padding-top: 100px;
+    padding-bottom: 45px;
+}
+
+.home p {
+    font-family: pushster;
+    font-size: 25px;
+
+}

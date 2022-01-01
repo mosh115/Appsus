@@ -11,7 +11,7 @@ export const mailService = {
 
 const KEY = 'mailDB';
 const gLoggedinUser = {
-    email: 'harvona.50forearm@appsus.com',
+    email: 'harvona@appsus.com',
     fullname: 'Harvona Shushan'
 }
 
@@ -110,7 +110,7 @@ function _createMails() {
                 isRead: false,
                 sentAt: 1551133930594,
                 from: 'popo@popo.com',
-                to: 'harvona.50forearm@appsus.com',
+                to: 'harvona@appsus.com',
                 draft: false,
                 trash: false
             },
@@ -120,7 +120,7 @@ function _createMails() {
                 body: 'Would love to catch up sometimes hrhhrhrh lloamin ajvna re thrtg EC EAGT THWW  arg tgrth sht',
                 isRead: false,
                 sentAt: Date.now(),
-                from: 'harvona.50forearm@appsus.com',
+                from: 'harvona@appsus.com',
                 to: 'popo@popo.com',
                 draft: false,
                 trash: false
@@ -132,9 +132,53 @@ function _createMails() {
                 isRead: false,
                 sentAt: 1551133930594,
                 from: 'popo@popo.com',
-                to: 'harvona.50forearm@appsus.com',
+                to: 'harvona@appsus.com',
                 draft: false,
                 trash: false,
+            },
+            {
+                id: utilService.makeId(),
+                subject: 'Do you want to go sleep?',
+                body: 'i\'d love to sleep for about a week catch up sometimes' + utilService.makeLorem(20),
+                isRead: false,
+                sentAt: Date.now()- 18400000,
+                from: 'mordechi@popo.com',
+                to: 'harvona@appsus.com',
+                draft: false,
+                trash: false,
+            },
+            {
+                id: utilService.makeId(),
+                subject: 'did you sleep?',
+                body: 'did\'nt sleep for about a week catch up sometimes' + utilService.makeLorem(20),
+                isRead: false,
+                sentAt: Date.now()- 36400000,
+                from: 'harvona@appsus.com',
+                to: 'mordechi@popo.com',
+                draft: false,
+                trash: false,
+            },
+            {
+                id: utilService.makeId(),
+                subject: 'did you eat?',
+                body: 'i\'m drinking only coffee for about a week catch up sometimes' + utilService.makeLorem(20),
+                isRead: false,
+                sentAt: Date.now()- 36400000,
+                from: 'harvona@appsus.com',
+                to: 'ester@popo.com',
+                draft: true,
+                trash: false,
+            },
+            {
+                id: utilService.makeId(),
+                subject: 'what do you think about a tree?',
+                body: 'for me and all my sons! did\'nt sleep for about a week catch up sometimes' + utilService.makeLorem(20),
+                isRead: false,
+                sentAt: Date.now()- 36400000,
+                from: 'harvona@appsus.com',
+                to: 'haman@popo.com',
+                draft: false,
+                trash: true,
             },
         ]
     }

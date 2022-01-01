@@ -1,5 +1,5 @@
 .search-input {
-    background-color: #f1f3f4;
+    background-color: #ffffff;
     width: 500px;
     height: 50px;
     font: normal 16px 'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
@@ -9,6 +9,8 @@
 }
 
 .compose {
+    height: 48px;
+    width: 150px;
     border: none;
     cursor: pointer;
     font-size: 1.25rem;
@@ -24,15 +26,17 @@
 }
 .folder-container>*{
     font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
-    font-size: .875rem;
+    font-size: 1rem;
     letter-spacing: .2px;
     color: #202124;
     text-shadow: none;
     margin: 4px;
+    padding: 3px;
     cursor: pointer;
 }
 .folder-container>*:hover {
-    background-color: #f1f3f4;
+    background-color: #ffffff;
+    border-radius: 5px;
 }
 
 

@@ -1,13 +1,26 @@
 .new-mail {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    bottom: 0;
-    left: 220px;
-    /* background-color: lawngreen; */
+    position: absolute;
+    bottom: 20px;
+    left: 240px;
 }
 
 .new-mail .header {
-    background-color: rgb(22, 20, 20);
+    padding: 4px;
+    background-color: #404040;
     color:rgb(241, 241, 241);
+}
+
+.new-mail .send {
+    height: 35px;
+    width: 70px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.new-mail .footer {
+    background-color: white;
 }

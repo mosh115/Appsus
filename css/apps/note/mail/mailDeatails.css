@@ -1,4 +1,8 @@
-.mail-details .back {
-    display: inline-block;
-    border: 1px #232020 solid;
+
+.mail-details {
+    font-family: 'Google Sans', Roboto ,RobotoDraft,Helvetica,Arial,sans-serif;
+    padding: 15px;
+}
+.mail-details>* {
+    margin-bottom: 10px;
 }

@@ -1,9 +1,10 @@
 .mail-app {
     display: grid;
+    background-color: rgb(243, 242, 236);
     grid-template-columns: 200px 1fr;
     grid-template-rows: 70px 1fr;
     gap: 20px;
-    margin: 20px;
+    padding: 20px;
 }
 .mail-list {
     min-height: 60vh;

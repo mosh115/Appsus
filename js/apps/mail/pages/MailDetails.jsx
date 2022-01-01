@@ -35,7 +35,7 @@ export class MailDetails extends React.Component {
         return (
             <section className="mail-details">
                 <header className="flex justify-space-between">
-                    <Link className="clean-link back" to="/mail">back to list</Link>
+                    <button><Link className="clean-link back" to="/mail">back to list</Link></button>
                     <button onClick={this.onRemovaMail}>delete mail</button>
                 </header>
                 <h1>{mail.subject}</h1>
