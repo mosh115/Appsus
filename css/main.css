@@ -1,5 +1,6 @@
 @import './parts/base.css';
 @import './parts/helpers.css';
+@import './parts/fonts.css';
 
 @import './cmps/app-header.css';
 @import './cmps/app-footer.css';
@@ -14,13 +15,7 @@
 @import './apps/note/mail/preview.css';
 @import './apps/note/mail/newMail.css';
 @import './apps/note/mail/layout.css';
-@import './apps/note/mail/preview.css';
+@import './apps/note/mail/search&compose.css';
+@import './apps/note/mail/mailDeatails.css';
 
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-}

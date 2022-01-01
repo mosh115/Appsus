@@ -28,9 +28,9 @@ function _getFilteredMalis(mails, criteria) {
     let { folder, isRead, showAll, txt } = criteria
     let filteredMails = mails;
     txt = txt.toLowerCase();
-    if (folder === 'inbox') filteredMails = filteredMails.filter(mail => mail.to === gLoggedinUser.email 
+    if (folder === 'inbox') filteredMails = filteredMails.filter(mail => mail.to === gLoggedinUser.email
         && !mail.trash && !mail.draft)
-    else if (folder === 'send') filteredMails = filteredMails.filter(mail => mail.from === gLoggedinUser.email 
+    else if (folder === 'send') filteredMails = filteredMails.filter(mail => mail.from === gLoggedinUser.email
         && !mail.trash && !mail.draft)
     else if (folder === 'drafts') filteredMails = filteredMails.filter(mail => mail.draft && !mail.trash)
     else if (folder === 'trash') filteredMails = filteredMails.filter(mail => mail.trash)
@@ -39,7 +39,8 @@ function _getFilteredMalis(mails, criteria) {
         else filteredMails = filteredMails.filter(mail => !mail.isRead)
     }
     if (txt) filteredMails = filteredMails.filter(mail => mail.subject.toLowerCase().includes(txt)
-        || mail.body.toLowerCase().includes(txt))
+        || mail.body.toLowerCase().includes(txt) || mail.to.toLowerCase().includes(txt) 
+        || mail.from.toLowerCase().includes(txt))
 
     return filteredMails;
 }
@@ -91,8 +92,8 @@ function createMail(mailToSave) {
     mailToSave.isRead = false;
     mailToSave.sentAt = Date.now();
     mailToSave.trash = false;
-    console.log('from service: ',mailToSave)
-    
+    console.log('from service: ', mailToSave)
+
     let mails = _loadMailsFromStorage()
     mails.push(mailToSave);
     _saveMailsToStorage(mails);

@@ -1,0 +1,10 @@
+@font-face {
+    font-family: fa;
+    src: url(../../fonts/fa-solid-900.ttf);
+}
+
+.fa {
+    font-family: fa;
+}
+
+ 

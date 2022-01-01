@@ -37,9 +37,8 @@ export class MailFolders extends React.Component {
                     <h2 onClick={() => this.onSelectFolder('drafts')}>Drafts</h2>
                     <h2 onClick={() => this.onSelectFolder('trash')}>trash</h2>
                 </section>
-                <section className="searc-input">
-                    <input type="text" placeholder="search in mail" onChange={this.onHandleSearch} />
-                </section>
+                    
+                    <input className="search-input" type="text" placeholder="search in mail" onChange={this.onHandleSearch} />
             </React.Fragment>
         )
     }

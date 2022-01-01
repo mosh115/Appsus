@@ -5,6 +5,7 @@
     border-bottom: 1px solid #e9edef;
     display: grid;
     grid-template-columns: 250px 1fr 100px;
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
 }
 .mail-preview.unread{ 
     background-color: #f5f7f7;
@@ -14,4 +15,7 @@
 }
 .mail-preview .mail-time{ 
     justify-self: center;
+}
+.mail-preview:hover {
+    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
 }

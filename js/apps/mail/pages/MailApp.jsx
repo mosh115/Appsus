@@ -24,7 +24,7 @@ export class MailApp extends React.Component {          //kcould be functoin
         let { newMailOpen } = this.state;
         return (
             <section className="mail-app" >
-                <button onClick={this.toggleNewMail}>+compose</button>
+                <button className="compose" onClick={this.toggleNewMail}>compose</button>
                 <Switch>
                     <Route component={MailList} path="/mail/list" />
                     <Route component={MailDetails} path="/mail/:mailId" />

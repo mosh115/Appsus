@@ -18,7 +18,7 @@ export class MailDetails extends React.Component {
                 if (!mail) return this.props.history.push('/mail');
                 if (!mail.isRead) {
                     mail.isRead = true;
-                    mailService.updateMail(mail).then(() => {})
+                    mailService.updateMail(mail).then(() => { })
                 }
                 this.setState({ mail })
             })
@@ -34,10 +34,12 @@ export class MailDetails extends React.Component {
         if (!mail) return <h1>Loading...</h1>
         return (
             <section className="mail-details">
-                <button onClick={this.onRemovaMail}>delete mail</button>
-                <Link to="/mail">back to list</Link>
+                <header className="flex justify-space-between">
+                    <Link className="clean-link back" to="/mail">back to list</Link>
+                    <button onClick={this.onRemovaMail}>delete mail</button>
+                </header>
                 <h1>{mail.subject}</h1>
-                <p>{mail.from}</p>
+                <p>from: {mail.from}</p>
                 <p>{mail.body}</p>
             </section>
         )
