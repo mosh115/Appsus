@@ -1,21 +1,25 @@
-@import './parts/base.css';
-@import './parts/helpers.css';
+@import 'parts/base.css';
+@import 'parts/helpers.css';
 
-@import './cmps/app-header.css';
-@import './cmps/app-footer.css';
+@import 'cmps/app-header.css';
+@import 'cmps/app-footer.css';
 
-@import './apps/note/note-index.css';
-@import './apps/note/note-list.css';
-@import './apps/note/note-preview.css';
+@import 'apps/note/note-index.css';
+@import 'apps/note/note-list.css';
+@import 'apps/note/note-preview.css';
+@import 'apps/note/note-todos.css';
 
 @import './apps/note/mail/layout.css';
 @import './apps/note/mail/preview.css';
 @import './apps/note/mail/newMail.css';
+@import 'apps/note/mail/layout.css';
+@import 'apps/note/mail/preview.css';
 
 
-*{
+* {
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
 }
