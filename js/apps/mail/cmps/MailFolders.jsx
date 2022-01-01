@@ -1,5 +1,8 @@
 import {eventBusService} from "../../../services/event-bus.service.js"
 
+
+const { Link } = ReactRouterDOM;
+
 export class MailFolders extends React.Component {
     state = {
         criteria: {
@@ -12,7 +15,8 @@ export class MailFolders extends React.Component {
 
     onSelectFolder = (folder) => {
         this.setState((prevState) => ({ criteria: { ...prevState.criteria, folder: folder } }), () => {
-            eventBusService.emit('filter-change', (this.state.criteria)) 
+            eventBusService.emit('filter-change', (this.state.criteria))
+            // this.props.history.push("/mail") 
         })
         // console.log('from select folder',this.state.criteria); //logs prev click
     }
@@ -29,7 +33,7 @@ export class MailFolders extends React.Component {
             <React.Fragment>
                 <section className="folder-container">
                     <h2 onClick={() => this.onSelectFolder('inbox')}>Inbox</h2>
-                    <h2 onClick={() => this.onSelectFolder('send')}>Send</h2>
+                    <Link to="/mail"> <h2 onClick={() => this.onSelectFolder('send')}>Send</h2></Link>
                     <h2 onClick={() => this.onSelectFolder('drafts')}>Drafts</h2>
                     <h2 onClick={() => this.onSelectFolder('trash')}>trash</h2>
                 </section>

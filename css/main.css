@@ -10,6 +10,7 @@
 
 @import './apps/note/mail/layout.css';
 @import './apps/note/mail/preview.css';
+@import './apps/note/mail/newMail.css';
 
 
 *{
