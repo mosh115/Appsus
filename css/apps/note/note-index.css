@@ -15,7 +15,7 @@
     flex-wrap: wrap;
     align-items: center;
     margin: 20px auto;
-    width: 60%;
+    width: 80%;
     padding: 10px;
     box-shadow: 0px 1px 4px 0px;
     border-radius: 8px;
@@ -23,7 +23,7 @@
 }
 
 .note-index .add-note input {
-    min-width: 60%;
+    min-width: 100%;
     border: none;
     letter-spacing: .01428571em;
     font-family: Roboto, Arial, sans-serif;
@@ -53,6 +53,8 @@
 .note-index .add-note .btn-actions img {
     width: 30px;
     padding: 5px;
+    border-radius: inherit;
+    background-color: inherit;
 }
 
 /* .note-index .add-note .btn-actions .new-txt {
@@ -70,5 +72,28 @@
 
 .note-index .add-note .btn-actions>*:hover {
     background-color: rgb(199, 191, 199);
+
+}
+
+@media (min-width: 900px) {
+    .note-index .add-note {
+
+
+        width: 60%;
+
+    }
+
+    .note-index .add-note input {
+        min-width: 60%;
+        border: none;
+        letter-spacing: .01428571em;
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.25rem;
+
+
+    }
+
 
 }
