@@ -13,14 +13,18 @@ export class MailDetails extends React.Component {
 
     loadMail = () => {
         const { mailId } = this.props.match.params
-        console.log('carId in CarDetails', mailId);
-        mailService.getMailById(mailId).then(mail => {
-            if (!mail) return this.props.history.push('/mail')
-            this.setState({ mail })
-        })
+        mailService.getMailById(mailId)
+            .then(mail => {
+                if (!mail) return this.props.history.push('/mail');
+                if (!mail.isRead) {
+                    mail.isRead = true;
+                    mailService.updateMail(mail).then(() => {})
+                }
+                this.setState({ mail })
+            })
     }
 
-    onRemoveMail = () => {
+    onRemovaMail = () => {
         mailService.removeMail(this.state.mail.id)
             .then(() => { this.props.history.push('/mail') })
     }
@@ -30,7 +34,7 @@ export class MailDetails extends React.Component {
         if (!mail) return <h1>Loading...</h1>
         return (
             <section className="mail-details">
-                <button onClick={this.onRemoveMail}>delete mail</button>
+                <button onClick={this.onRemovaMail}>delete mail</button>
                 <Link to="/mail">back to list</Link>
                 <h1>{mail.subject}</h1>
                 <p>{mail.from}</p>

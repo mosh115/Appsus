@@ -4,8 +4,9 @@ import { storageService } from '../../../services/storage.service.js'
 export const mailService = {
     query,
     removeMail,
-    saveMail,
+    createMail,
     getMailById,
+    updateMail,
 }
 
 const KEY = 'mailDB';
@@ -27,9 +28,11 @@ function _getFilteredMalis(mails, criteria) {
     let { folder, isRead, showAll, txt } = criteria
     let filteredMails = mails;
     txt = txt.toLowerCase();
-    if (folder === 'inbox') filteredMails = filteredMails.filter(mail => mail.to === gLoggedinUser.email)
-    else if (folder === 'send') filteredMails = filteredMails.filter(mail => mail.from === gLoggedinUser.email)
-    else if (folder === 'drafts') filteredMails = filteredMails.filter(mail => mail.draft)
+    if (folder === 'inbox') filteredMails = filteredMails.filter(mail => mail.to === gLoggedinUser.email 
+        && !mail.trash && !mail.draft)
+    else if (folder === 'send') filteredMails = filteredMails.filter(mail => mail.from === gLoggedinUser.email 
+        && !mail.trash && !mail.draft)
+    else if (folder === 'drafts') filteredMails = filteredMails.filter(mail => mail.draft && !mail.trash)
     else if (folder === 'trash') filteredMails = filteredMails.filter(mail => mail.trash)
     if (!showAll) {
         if (isRead) filteredMails = filteredMails.filter(mail => mail.isRead)
@@ -41,20 +44,20 @@ function _getFilteredMalis(mails, criteria) {
     return filteredMails;
 }
 
-function saveMail(mailToSave) {
-    return mailToSave.id ? _updateMail(mailToSave) : _addMail(mailToSave)
-}
+// function saveMail(mailToSave) {
+//     return mailToSave.id ? _updateMail(mailToSave) : _addMail(mailToSave)
+// }
 
-function _addMail(mailToSave) {
+// function _addMail(mailToSave) {
+//     let mails = _loadMailsFromStorage()
+//     var mail = createMail(mailToSave)
+//     mails = [mail, ...mails]
+//     _saveMailsToStorage(mails);
+//     return Promise.resolve()
+// }
+
+function updateMail(mailToSave) {
     let mails = _loadMailsFromStorage()
-    var mail = _createMail(mailToSave)
-    mails = [mail, ...mails]
-    _saveMailsToStorage(mails);
-    return Promise.resolve()
-}
-
-function _updateMail(mailToSave) {
-    const mails = _loadMailsFromStorage()
     var mailIdx = mails.findIndex(function (mail) {
         return mail.id === mailToSave.id;
     })
@@ -65,7 +68,9 @@ function _updateMail(mailToSave) {
 
 function removeMail(mailId) {
     let mails = _loadMailsFromStorage()
-    mails = mails.filter(mail => mail.id !== mailId)
+    let mailIdx = mails.findIndex(mail => mail.id === mailId)
+    if (!mails[mailIdx].trash) mails[mailIdx].trash = true;
+    else mails.splice(mailIdx, 1);
     _saveMailsToStorage(mails);
     return Promise.resolve()
 }
@@ -80,14 +85,17 @@ function getMailById(mailId) {
 }
 
 
-function _createMail(mailToSave) {
-    if (!mailToSave.speed) mailToSave.speed = utilService.getRandomIntInclusive(1, 200)
-    return {
-        // id: utilService.makeId(),
-        // ...mailToSave,
-        // desc: utilService.makeLorem(),
-        // ctg: Math.random() <= 0.6 ? 'bestSelling' : ''
-    }
+function createMail(mailToSave) {
+    mailToSave.id = utilService.makeId();
+    mailToSave.from = gLoggedinUser.email;
+    mailToSave.isRead = false;
+    mailToSave.sentAt = Date.now();
+    mailToSave.trash = false;
+    console.log('from service: ',mailToSave)
+    
+    let mails = _loadMailsFromStorage()
+    mails.push(mailToSave);
+    _saveMailsToStorage(mails);
 }
 
 function _createMails() {
