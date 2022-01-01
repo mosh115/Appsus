@@ -1,8 +1,13 @@
 @import './parts/base.css';
 @import './parts/helpers.css';
+@import './parts/fonts.css';
 
 @import './cmps/app-header.css';
 @import './cmps/app-footer.css';
+
+@import './pages/home.css';
+@import './pages/about.css';
+
 
 @import './apps/note/note-index.css';
 @import './apps/note/note-list.css';

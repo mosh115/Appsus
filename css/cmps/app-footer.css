@@ -1,5 +1,6 @@
 .app-footer {
-    position: fixed;
-    bottom: 0;
+    background-color: rgb(146 149 143);
+    font-family: Raleway;
+    padding: 30px;
     text-align: center;
 }

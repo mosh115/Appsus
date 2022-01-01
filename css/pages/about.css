@@ -1,0 +1,68 @@
+.about {
+    background-color: rgb(128, 126, 124);
+    min-height: 80vh;
+    font-family: Roboto;
+    text-align: center;
+    padding-bottom: 30px;
+
+}
+
+.about .about-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.about .img-cover {
+    width: 100%;
+    max-height: 300px;
+    margin-bottom: 15px;
+
+}
+
+.about h2 {
+    font-family: pushster;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.about p {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.about nav>* {
+
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 3px 8px;
+    border-radius: 5px;
+    border: 1px solid darkblue;
+    margin: 5px;
+
+}
+
+.about nav>*:hover {
+    background-color: rgb(153, 147, 137);
+}
+
+.about .team {
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.about .team li {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about .vision {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
